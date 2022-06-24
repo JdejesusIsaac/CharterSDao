@@ -3,22 +3,22 @@
 pragma solidity ^0.8.7;
 
 
-interface IdaoContract {
+interface SbtContract {
         function balanceOf(address, uint256) external view returns (uint256);
     }
 
-contract SuccessCharterDao {
+contract CharterSuccessDao {
 
     address public owner;
     uint256 nextProposal;
     uint256[] public validTokens;
-    IdaoContract daoContract;
+    SbtContract daoContract;
 
     constructor(){
         owner = msg.sender;
         nextProposal = 1;
-        daoContract = IdaoContract(0x10F53F96C54F153F3F42aC2cC858e1865630A3C9);
-        validTokens = [34885103611559094078416375598166902696017567311370712658413208238551126245396];
+        daoContract = SbtContract(0x91c36203FfcF3978d57Eb2377D97e84525D8f2AC);
+        validTokens = [1];
     }
 
     struct proposal{
@@ -57,7 +57,6 @@ contract SuccessCharterDao {
         bool passed
     );
 
-
     function checkProposalEligibility(address _proposalist) private view returns (
         bool
     ){
@@ -68,6 +67,11 @@ contract SuccessCharterDao {
         }
         return false;
     }
+
+
+
+   
+        
 
     function checkVoteEligibility(uint256 _id, address _voter) private view returns (
         bool
