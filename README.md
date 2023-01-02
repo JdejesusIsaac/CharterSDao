@@ -26,10 +26,7 @@ POLYGON_MUMBAI =
 PRIVATE_KEY = 
 
 
-#Resources
-https://www.youtube.com/watch?v=Am5TNChbS34
 
-https://www.youtube.com/watch?v=sAcEJcwPTOk&t=1867s
 
 
 
